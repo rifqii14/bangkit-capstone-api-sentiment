@@ -1,0 +1,7 @@
+covid-sentiment.csv -> ada 52960 data
+
+Setelah dibagi dua berarti 
+
+Nadhif -> 0-26480
+
+Alif ->26480 -> 52960

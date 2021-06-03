@@ -18,7 +18,7 @@ from keras.layers import Embedding
 
 # Get current path location
 current_path = os.getcwd()
-dataset_path = os.path.join(current_path, "Bangkit-Capstone", "Dataset", "modified-dataset.csv")
+dataset_path = os.path.join(current_path, "Dataset", "modified-dataset.csv")
 df = pd.read_csv(dataset_path)
 
 df.sample(10)
@@ -125,7 +125,7 @@ class SentimentModel:
         model.add(layers.Dense(3,activation='softmax'))
         model.compile(optimizer='rmsprop',loss='categorical_crossentropy', metrics=['accuracy'])
         checkpoint = ModelCheckpoint("best_model1.hdf5", monitor='val_accuracy', verbose=1,save_best_only=True, mode='auto', period=1,save_weights_only=False)
-        history = model.fit(X_train, Y_train, epochs=5,validation_data=(X_validation, Y_validation),callbacks=[checkpoint])
+        history = model.fit(X_train, Y_train, epochs=70,validation_data=(X_validation, Y_validation),callbacks=[checkpoint])
         return model
     
     def predict_sentiment(self, text_twitter):

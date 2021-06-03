@@ -124,8 +124,8 @@ class SentimentModel:
         model.add(layers.LSTM(15,dropout=0.5)) #Our LSTM layer
         model.add(layers.Dense(3,activation='softmax'))
         model.compile(optimizer='rmsprop',loss='categorical_crossentropy', metrics=['accuracy'])
-        checkpoint = ModelCheckpoint("best_model1.hdf5", monitor='val_accuracy', verbose=1,save_best_only=True, mode='auto', period=1,save_weights_only=False)
-        history = model.fit(X_train, Y_train, epochs=70,validation_data=(X_validation, Y_validation),callbacks=[checkpoint])
+        checkpoint = ModelCheckpoint("sentiment-analysis-CNN1D-LSTM .hdf5", monitor='val_accuracy', verbose=1,save_best_only=True, mode='auto', period=1,save_weights_only=False)
+        history = model.fit(X_train, Y_train, epochs=100,validation_data=(X_validation, Y_validation),callbacks=[checkpoint])
         return model
     
     def predict_sentiment(self, text_twitter):

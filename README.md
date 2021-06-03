@@ -16,7 +16,7 @@ pip3 install uvicorn
 
 2. To start the server, please run (for example)
 ```
-uvicorn main:app --host 127.0.0.1 --port 9000
+uvicorn app:app --host 127.0.0.1 --port 9000
 ```
 
 3. Access API
